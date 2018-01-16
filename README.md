@@ -9,12 +9,12 @@ improve, document, etc.
 Original author: Marco Enrico Piras (kikkomep)
 
 
-= generate_users_list =
+## generate_users_list
 
 Generate a user list, either using a prepared mailing list (--mailing-list)
 or autogenerating emails with a specific email domain (--email-domain)
 
-== Example ==
+### Example
 
 ```
 ./generate_users_list.py -n 5 --email-domain me.com
@@ -26,7 +26,7 @@ uid,username,email,password,hashed_password
 5,user-5,user-5@me.com,7FSGZU,sha1:1329f733043c:b7484370afea3791e8890260ed85cfd0f81a3dd9
 ```
 
-== Options ==
+### Options
 
 ```
   -h, --help            show this help message and exit
@@ -42,20 +42,20 @@ uid,username,email,password,hashed_password
   -p PREFIX, --username-prefix PREFIX
 ```
 
-= galaxy_user_manager =
+## galaxy_user_manager
 
 Script to create or delete users from a Galaxy instance.
 
-== Commands ==
+### Commands
 
 | register   | Create Galaxy users.  You must provide a list of users to create with --users-file  |
 | delete     | Delete Galaxy users.  You must provide a list of galaxy users to delete with --galaxy-users-file  |
 | delete-all | Delete all Galaxy users |
 
 
-== Examples ==
+### Examples
 
-=== Register some users ===
+#### Register some users
 
 ```
 ./galaxy_users_manager.py register --server http://192.168.99.100:30700 --api-key 5a16034a792cd4489e1db67930e46b6a  --users-file users_list.csv --output-file galaxy-users.csv
@@ -63,7 +63,7 @@ Script to create or delete users from a Galaxy instance.
 
 The output file has the same data as the input plus new columns containing the galaxy ids.
 
-=== Delete those users ===
+#### Delete those users
 
 ```
 ./galaxy_users_manager.py delete --server http://192.168.99.100:30700 --api-key 5a16034a792cd4489e1db67930e46b6a --galaxy-users-file galaxy-users.csv
@@ -75,7 +75,7 @@ the same id/email address as old accounts that have been deleted.
 
 
 
-=== All in one step ===
+#### All in one step
 
 At least on linux, you can do this
 
