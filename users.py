@@ -5,7 +5,7 @@ from notebook.auth import passwd
 
 def generate_password(user_id, length):
     chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
-    return "".join(chars[ord(c) % len(chars)] for c in os.urandom(length))
+    return "".join(chars[c % len(chars)] for c in os.urandom(length))
 
 
 def get_hashed_password(password):
@@ -44,5 +44,5 @@ def generate_users_list(mailing_list, number_of_users, password_length, prefix, 
         return {"uid": user_id, "username": username, "email": email,
                 "password": password, "hashed_password": hashed_password}
 
-    users = [ make_user(n) for n in xrange(number_of_users) ]
+    users = [ make_user(n) for n in range(number_of_users) ]
     return users
