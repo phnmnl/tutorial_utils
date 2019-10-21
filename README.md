@@ -86,7 +86,7 @@ At least on linux, you can do this
 ```
 
 And simple printing works with:
-`cut -d"," -f 3,5 biobyte2019-users.csv | sed -e 's/,/    \t/' | enscript -FCourier16 -s 16 ` 
+`cut -d"," -f 3,5 galaxy-users.csv | sed -e 's/,/    \t/' | enscript -FCourier16 -s 16 ` 
 
 ## Installation / dependencies
 
