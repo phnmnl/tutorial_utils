@@ -85,9 +85,8 @@ At least on linux, you can do this
      --users-file /dev/stdin --output-file galaxy-users.csv
 ```
 
-And minimalistic printing works with (the second `" "` is a tab-stop):
-
-`cut -d "," -f 3,5 galaxy-users.csv | tr "," " " | while read A ; do echo "$A" ; echo ; done | lpr `
+And simple printing works with:
+`cut -d"," -f 3,5 biobyte2019-users.csv | sed -e 's/,/    \t/' | enscript -FCourier16 -s 16 ` 
 
 ## Installation / dependencies
 
