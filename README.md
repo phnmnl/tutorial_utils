@@ -1,6 +1,6 @@
 
 
-# Undocumented utility scripts for PhenoMeNal practical sessions
+# Barely documented utility scripts for PhenoMeNal practical sessions
 
 A set of scripts originally created for CloudMET 2017.  Feel free to use,
 improve, document, etc.
@@ -84,3 +84,14 @@ At least on linux, you can do this
   ./galaxy_users_manager.py register --server http://192.168.99.100:30700 --api-key 5a16034a792cd4489e1db67930e46b6a \
      --users-file /dev/stdin --output-file galaxy-users.csv
 ```
+
+And minimalistic printing works with (the second `" "` is a tab-stop):
+
+`cut -d "," -f 3,5 galaxy-users.csv | tr "," " " | while read A ; do echo "$A" ; echo ; done | lpr `
+
+## Installation / dependencies
+
+Note that `python3-bioblend (0.7.0-2)` from Ubuntu 18.04 is too old, 
+`bioblend-0.13.0` is known to work.
+
+
